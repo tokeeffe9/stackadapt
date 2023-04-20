@@ -46,6 +46,6 @@ export default class LoginPage extends LandingPage {
     }
 
     async getAlertMessage() {
-        return await this.invalidAlert.innerText();
+        return (await this.invalidAlert.innerText()).trim();
     }
 }

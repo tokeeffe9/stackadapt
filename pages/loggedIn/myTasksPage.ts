@@ -30,7 +30,7 @@ export default class MyTasksPage extends NavigationPage {
 
         const numberOfElements = await this.deleteTask.count();
         for (let i = 0; i < numberOfElements; i++) {
-            await this.deleteTaskByIndex(i);
+            await this.deleteTaskByIndex(0);
         }
     }
 
@@ -53,7 +53,7 @@ export default class MyTasksPage extends NavigationPage {
     }
 
     async clickViewTask(index: number) {
-        await this.viewTask.nth(index).click();
+        await this.viewTask.nth(index).click()
     }
 
     async getViewedTaskText() {

@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "npx playwright test",
-    "record": "npx playwright codegen"
+    "record": "npx playwright codegen",
+    "html": "npx playwright show-report"
   },
   "keywords": [],
   "author": "",
