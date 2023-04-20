@@ -21,9 +21,6 @@ const config: PlaywrightTestConfig = {
     headless: false,
     screenshot: "only-on-failure",
     video: "retain-on-failure",
-    // launchOptions: {
-    //   slowMo: 200
-    // }
   },
   retries: 0,
   reporter: [["json", {
