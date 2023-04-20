@@ -1,20 +1,62 @@
 import { Locator, Page } from "@playwright/test";
-export default class LandingPage {
+import NavigationPage from "./navigationPage";
+export default class MyTasksPage extends NavigationPage {
 
-    readonly signUpNav: Locator;
-    readonly passwordInput: Locator;
+    private readonly viewTask: Locator;
+    private readonly deleteTask: Locator;
+    private readonly taskText: Locator;
+    private readonly addATask: Locator;
+    private readonly yourTaskText: Locator;
+    private readonly saveYourTask: Locator;
+    private readonly viewedTaskText: Locator;
 
     constructor(public page: Page) {
-        this.signUpNav = page.locator('.nav-link[href="/signup"]');
-        this.passwordInput = page.locator('.nav-link[href="/login"]');
+
+        super(page);
+        this.viewTask = page.locator('.btn-outline-primary');
+        this.deleteTask = page.locator('.btn-outline-danger');
+        this.taskText = page.locator('tbody > tr > td');
+        this.addATask = page.locator('td>[href="/tasks/add_task"]');
+        this.yourTaskText = page.locator('#task');
+        this.saveYourTask = page.locator('#submit');
+        this.viewedTaskText = page.locator('.card-text');
     }
 
-    async clickOnSignUpNav(){
-        await this.signUpNav.click();
+    async deleteTaskByIndex(index: number) {
+        await this.deleteTask.nth(index).click();
     }
 
-    
-    async clickOnLoginNav(){
-        await this.passwordInput.click();
+    async deleteAllTasks() {
+
+        const numberOfElements = await this.deleteTask.count();
+        for (let i = 0; i < numberOfElements; i++) {
+            await this.deleteTaskByIndex(i);
+        }
+    }
+
+    async getMyTaskText(index: number) {
+        return await this.taskText.nth(index).textContent();
+    }
+
+    async getNumberofTasks() {
+        return await this.viewTask.count();
+    }
+
+    async clickAddATask() {
+        await this.addATask.click();
+    }
+
+    async createYourTask(task: string) {
+
+        await this.yourTaskText.fill(task);
+        await this.saveYourTask.click();
+    }
+
+    async clickViewTask(index: number) {
+        await this.viewTask.nth(index).click();
+    }
+
+    async getViewedTaskText() {
+        return await this.viewedTaskText.textContent();
     }
 }

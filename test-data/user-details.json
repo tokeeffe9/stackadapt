@@ -1,5 +1,41 @@
 {
-    "username":"timtest",
-    "email":"timtest@gmail.com",
-    "password": "pass1234"
+    "Login_test_01": {
+        "username": "timtest",
+        "email": "timtest@gmail.com",
+        "password": "pass1234"
+    },
+    "Login_test_02": {
+        "username": "invalid",
+        "email": "invalid@gmail.com",
+        "password": "pass1234",
+        "expectedString": "Sorry, invalid login ×"
+    },
+    "Login_test_03": {
+        "username": "testUpdate",
+        "email": "testupdate@gmail.com",
+        "password": "pass1234",
+        "newPassword": "pass123$",
+        "expectedString": "Password updated."
+    },
+    "Delete_tasks_test_01": {
+        "username": "deletetasks",
+        "email": "deletetasks@gmail.com",
+        "password": "pass123$",
+        "expectedString": "No Task Added. Please add a task"
+    },
+    "Sign_up_test_01": {
+        "username": "",
+        "email": "charli",
+        "password": "s3cr",
+        "nameErrorMessage": "Please Enter a valid Name",
+        "emailErrorMessage": "Please Enter a valid Email",
+        "passwordErrorMessage": "Please Enter a valid Password",
+        "termsErrorMessage": "This checkbox is required"
+    },
+    "Add_tasks_test_01": {
+        "username": "addTask",
+        "email": "addtask@gmail.com",
+        "password": "pass1234",
+        "task": "StackAdapt Assignment"
+    }
 }

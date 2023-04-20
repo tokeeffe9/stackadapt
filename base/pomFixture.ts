@@ -4,6 +4,7 @@ import LoginPage from "../pages/loggedOut/loginPage";
 import SignUpPage from "../pages/loggedOut/signUpPage";
 import NavigationPage from "../pages/loggedIn/navigationPage";
 import MyTasksPage from "../pages/loggedIn/myTasksPage";
+import PasswordPage from "../pages/loggedIn/passwordPage";
 
 
 type pages = {
@@ -12,6 +13,7 @@ type pages = {
     signUpPage: SignUpPage;
     navigationPage: NavigationPage;
     myTasksPage: MyTasksPage;
+    passwordPage: PasswordPage;
 }
 
 const testPages = baseTest.extend<pages>({
@@ -30,6 +32,9 @@ const testPages = baseTest.extend<pages>({
     },
     myTasksPage: async ({ page }, use) => {
         await use(new MyTasksPage(page))
+    },
+    passwordPage: async ({ page }, use) => {
+        await use(new PasswordPage(page))
     }
 })
 
