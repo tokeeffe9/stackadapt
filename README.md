@@ -13,9 +13,9 @@ To run this project, you'll need to have the following installed:
 
 ## Installation
 
-To install Playwright and the necessary dependencies, run the following command:
+To install Playwright and the necessary dependencies, run the following command in the project directory:
 
-```npm install```
+```npx playwright install```
 
 ## Configuration
 
