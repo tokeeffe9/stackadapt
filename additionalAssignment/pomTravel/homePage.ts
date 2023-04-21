@@ -47,9 +47,7 @@ export class HomePage {
         this.topTravelDealsOptionsText = page.locator('[data-test-id="topTravelDealsOptions"]');
         this.topTravelDealsLinks = page.locator('[href][data-test-id="topTravelDealsOptions"]');
     }
-
-
-
+    
     async clickFindAStore() {
         await this.findAStore.click();
     }

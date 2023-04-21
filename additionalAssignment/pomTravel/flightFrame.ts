@@ -1,5 +1,5 @@
 import { Locator, Page } from '@playwright/test';
-import { HomePage } from './homepage';
+import { HomePage } from './homePage';
 
 export class FlightFrame extends HomePage {
 

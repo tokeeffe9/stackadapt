@@ -21,7 +21,7 @@ To install Playwright and the necessary dependencies, run the following command:
 
 playwright.config.ts has been setup to do the following
 
-- Run tests on chromium
+- Run tests in parallel on Chrome and Firefox
 - Only tests in ```tests``` directory will be run
 - ```baseURL``` of the site has been setup
 - Headless has been set to false so browsers will be visible

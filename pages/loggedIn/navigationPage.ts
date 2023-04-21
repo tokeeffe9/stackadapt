@@ -22,6 +22,7 @@ export default class NavigationPage {
 
     async navigateToChangePassword() {
 
+        await this.page.waitForLoadState("networkidle");
         await this.myAccount.click();
         await this.changePassword.click();
     }
@@ -34,6 +35,7 @@ export default class NavigationPage {
 
     async clickTasksAndAddTask() {
 
+        await this.page.waitForLoadState("networkidle");
         await this.tasks.click();
         await this.addTasks.click();
     }

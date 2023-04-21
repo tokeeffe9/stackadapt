@@ -23,6 +23,8 @@ export default class MyTasksPage extends NavigationPage {
     }
 
     async deleteTaskByIndex(index: number) {
+        
+        await this.page.waitForLoadState("networkidle");
         await this.deleteTask.nth(index).click();
     }
 
