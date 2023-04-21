@@ -42,8 +42,7 @@ export default class LoginPage extends LandingPage {
     }
 
     async clickSignIn() {
-        
-        await this.page.waitForLoadState("networkidle");
+        await this.page.waitForTimeout(1000);
         await this.signIn.click();
     }
 
