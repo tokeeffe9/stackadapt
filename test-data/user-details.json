@@ -21,8 +21,9 @@
         "username": "deletetasks",
         "email": "deletetasks@gmail.com",
         "password": "pass123$",
-        "expectedNoOfTasks": 2,
-        "expectedString": "No Task Added. Please add a task"
+        "initialNoOfTasks": 3,
+        "noOfTasksToDelete": 2,
+        "expectedString": "Task Number 1"
     },
     "TC-05": {
         "username": "addTask",
