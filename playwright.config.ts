@@ -12,6 +12,7 @@ const config: PlaywrightTestConfig = {
       name: "firefox",
       use: {
         ...devices["Desktop Firefox"],
+        ignoreHTTPSErrors: true
       }
     }
   ],
@@ -23,6 +24,7 @@ const config: PlaywrightTestConfig = {
     video: "retain-on-failure",
   },
   retries: 0,
+  workers: 3,
   reporter: [["json", {
     outputFile: "jsonReports/jsonReport.json"
   }], ["html", {

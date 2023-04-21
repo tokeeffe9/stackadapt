@@ -26,7 +26,7 @@ test("TC-04 : Verify user can delete tasks from their account", async ({ myTasks
     }
 });
 
-test("TC-05 : Verify user can add tasks to an empty account", async ({ page, baseURL, myTasksPage }) => {
+test("TC-05 : Verify user can add tasks to an account with no tasks", async ({ page, baseURL, myTasksPage }) => {
 
     expect(await myTasksPage.getNumberofTasks()).toBe(0);
     await myTasksPage.clickAddATask();
