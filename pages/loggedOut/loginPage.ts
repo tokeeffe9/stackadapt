@@ -42,8 +42,6 @@ export default class LoginPage extends LandingPage {
     }
 
     async clickSignIn() {
-
-        await this.signIn.waitFor();
         await this.signIn.click();
     }
 

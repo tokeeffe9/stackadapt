@@ -2,18 +2,18 @@ import { PlaywrightTestConfig, devices } from '@playwright/test';
 
 const config: PlaywrightTestConfig = {
   projects: [
-    // {
-    //   name: "chrome",
-    //   use: {
-    //     ...devices["Desktop Chrome"]
-    //   }
-    // },
     {
-      name: "firefox",
+      name: "chrome",
       use: {
-        ...devices["Desktop Firefox"],
+        ...devices["Desktop Chrome"]
       }
-    }
+    },
+    // {
+    //   name: "firefox",
+    //   use: {
+    //     ...devices["Desktop Firefox"],
+    //   }
+    // }
   ],
   testDir: "tests/",
   use: {
@@ -21,9 +21,8 @@ const config: PlaywrightTestConfig = {
     headless: true,
     screenshot: "only-on-failure",
     video: "retain-on-failure",
-    trace: 'on-first-retry'
   },
-  retries: 1,
+  retries: 0,
   workers: 3,
   reporter: [["json", {
     outputFile: "jsonReports/jsonReport.json"
