@@ -18,6 +18,7 @@ test("TC-04 : Verify user can still have a remaining task after deleting multipl
     const remainingTasks = initialNoOfTasks - jsonUserData.noOfTasksToDelete;
     expect(await myTasksPage.getNumberofTasks()).toBe(initialNoOfTasks);
 
+    //Deletes the latest created tasks
     for (let i = initialNoOfTasks - 1; i >= remainingTasks; i--) {
         await myTasksPage.deleteTaskByIndex(i);
     }
