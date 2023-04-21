@@ -1,5 +1,6 @@
-import { Locator, Page } from "@playwright/test";
+import type { Locator, Page } from "@playwright/test";
 import NavigationPage from "./navigationPage";
+
 export default class PasswordPage extends NavigationPage {
 
     private readonly currentPasswordTextbox: Locator;
@@ -34,17 +35,15 @@ export default class PasswordPage extends NavigationPage {
         await this.newPasswordTextbox.fill(newPassword);
     }
 
-    async enterRepeatedPassword(newPassword: string) {
-        await this.repeatPasswordTextbox.fill(newPassword);
+    async enterRepeatedPassword(repeatedPassword: string) {
+        await this.repeatPasswordTextbox.fill(repeatedPassword);
     }
 
     async clickUpdate() {
-        return await this.update.click();
+        await this.update.click();
     }
 
     async getPasswordUpdatedAlertText() {
-
-        const text = this.passwordUpdateAlert.innerText();
-        return await text;
+        return await this.passwordUpdateAlert.innerText();
     }
 }

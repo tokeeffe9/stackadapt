@@ -1,4 +1,4 @@
-import { Locator, Page } from "@playwright/test";
+import type { Locator, Page } from "@playwright/test";
 import LandingPage from "./landingPage";
 
 export default class LoginPage extends LandingPage {

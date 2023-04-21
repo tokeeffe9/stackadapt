@@ -1,4 +1,4 @@
-import { Locator, Page } from "@playwright/test";
+import type { Locator, Page } from "@playwright/test";
 export default class NavigationPage {
 
     private readonly myAccount: Locator;
@@ -33,7 +33,7 @@ export default class NavigationPage {
         await this.logOut.click();
     }
 
-    async clickTasksAndAddTask() {
+    async navigateToTasksAndAddTask() {
 
         await this.page.waitForLoadState("networkidle");
         await this.tasks.click();

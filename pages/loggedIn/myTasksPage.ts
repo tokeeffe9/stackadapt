@@ -1,4 +1,4 @@
-import { Locator, Page } from "@playwright/test";
+import type { Locator, Page } from "@playwright/test";
 import NavigationPage from "./navigationPage";
 export default class MyTasksPage extends NavigationPage {
 
@@ -8,10 +8,10 @@ export default class MyTasksPage extends NavigationPage {
     private readonly addATask: Locator;
     private readonly yourTaskText: Locator;
     private readonly saveYourTask: Locator;
-    private readonly viewedTaskText: Locator;
+    private readonly viewedTaskDescription: Locator;
 
     constructor(public page: Page) {
-
+        
         super(page);
         this.viewTask = page.locator('.btn-outline-primary');
         this.deleteTask = page.locator('.btn-outline-danger');
@@ -19,11 +19,11 @@ export default class MyTasksPage extends NavigationPage {
         this.addATask = page.locator('td>[href="/tasks/add_task"]');
         this.yourTaskText = page.locator('#task');
         this.saveYourTask = page.locator('#submit');
-        this.viewedTaskText = page.locator('.card-text');
+        this.viewedTaskDescription = page.locator('.card-text');
     }
 
     async deleteTaskByIndex(index: number) {
-        
+
         await this.page.waitForLoadState("networkidle");
         await this.deleteTask.nth(index).click();
     }
@@ -58,7 +58,7 @@ export default class MyTasksPage extends NavigationPage {
         await this.viewTask.nth(index).click()
     }
 
-    async getViewedTaskText() {
-        return await this.viewedTaskText.textContent();
+    async getViewedTaskDescription() {
+        return await this.viewedTaskDescription.textContent();
     }
 }
