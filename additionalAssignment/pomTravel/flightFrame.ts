@@ -3,29 +3,33 @@ import { HomePage } from './homePage';
 
 export class FlightFrame extends HomePage {
 
-    readonly fromDateText: Locator;
-    readonly toDateText: Locator;
-    readonly fromDatePicker: Locator;
-    readonly toDateTextPicker: Locator;
-    readonly departureDate: Locator;
-    readonly returnDate: Locator;
-    readonly flexibleDateCheckbox: Locator;
-    readonly flexibleDateInfo: Locator;
-    readonly studentsDropdown: Locator;
-    readonly compareFaresCheckbox: Locator;
-    readonly underAgeDropdown: Locator;
-    readonly overAgeDropdown: Locator;
-    readonly findYourFlight: Locator;
-    readonly advancedSearch: Locator;
+    private readonly fromDateText: Locator;
+    private readonly toDateText: Locator;
+    private readonly geoFromDate: Locator;
+    private readonly geoToDate: Locator;
+    private readonly fromDatePicker: Locator;
+    private readonly toDateTextPicker: Locator;
+    private readonly departureDate: Locator;
+    private readonly returnDate: Locator;
+    private readonly flexibleDateCheckbox: Locator;
+    private readonly flexibleDateInfo: Locator;
+    private readonly studentsDropdown: Locator;
+    private readonly compareFaresCheckbox: Locator;
+    private readonly underAgeDropdown: Locator;
+    private readonly overAgeDropdown: Locator;
+    private readonly findYourFlight: Locator;
+    private readonly advancedSearch: Locator;
 
-    readonly secureBooking: Locator;
-    readonly verifiedlogos: Locator;
+    private readonly secureBooking: Locator;
+    private readonly verifiedlogos: Locator;
 
     constructor(page: Page) {
 
         super(page);
         this.fromDateText = page.locator('[data-test-id="fromDate"]');
         this.toDateText = page.locator('[data-test-id="toDate"]');
+        this.geoFromDate = page.locator('[data-test-id="fromDate"]');
+        this.geoToDate = page.locator('[data-test-id="toDate"]');
         this.fromDateText = page.locator('[data-test-id="fromDate"]');
         this.toDateText = page.locator('[data-test-id="toDate"]');
         this.departureDate = page.locator('[data-test-id="departureDate"]');
@@ -53,6 +57,7 @@ export class FlightFrame extends HomePage {
         numberOfOverAge: number;
         compareFares: boolean;
     }) {
+        
         await this.enterFromDate(data.fromDate);
         await this.enterToDate(data.toDate);
         await this.enterDepartureDate(data.departureDate);
