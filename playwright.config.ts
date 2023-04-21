@@ -18,7 +18,7 @@ const config: PlaywrightTestConfig = {
   testDir: "tests/",
   use: {
     baseURL: "http://stackadapt-interview.us-east-1.elasticbeanstalk.com/",
-    headless: false,
+    // headless: false,
     screenshot: "only-on-failure",
     video: "retain-on-failure",
   },
